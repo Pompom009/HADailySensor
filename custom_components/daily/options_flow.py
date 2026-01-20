@@ -28,22 +28,22 @@ class DailySensorOptionsFlowHandler(config_entries.OptionsFlow):
 
     def __init__(self, config_entry):
         """Initialize HACS options flow."""
-        self.config_entry = config_entry
-        self.options = dict(config_entry.options)
+        self._config_entry = config_entry
+        self._options = dict(config_entry.options) 
         self._errors = {}
-        self._operation = self.options.get(
+        self._operation = self._options.get(
             CONF_OPERATION, config_entry.data.get(CONF_OPERATION)
         )
-        self._input_sensor = self.options.get(
+        self._input_sensor = self._options.get(
             CONF_INPUT_SENSOR, config_entry.data.get(CONF_INPUT_SENSOR)
         )
-        self._auto_reset = self.options.get(
+        self._auto_reset = self._options.get(
             CONF_AUTO_RESET, config_entry.data.get(CONF_AUTO_RESET)
         )
-        self._interval = self.options.get(
+        self._interval = self._options.get(
             CONF_INTERVAL, config_entry.data.get(CONF_INTERVAL)
         )
-        self._unit_of_measurement = self.options.get(
+        self._unit_of_measurement = self._options.get(
             CONF_UNIT_OF_MEASUREMENT, config_entry.data.get(CONF_UNIT_OF_MEASUREMENT)
         )
 
